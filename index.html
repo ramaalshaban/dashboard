@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindbricks Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login View -->
+    <div id="loginView" class="login-view">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Mindbricks Dashboard</h1>
+                <p>Enter your Bearer token to access the dashboard</p>
+            </div>
+            <div class="login-form">
+                <input type="password" id="bearerToken" placeholder="Enter Bearer Token" />
+                <button id="loginButton">Login</button>
+            </div>
+            <div id="loginError" class="error hidden">
+                <p id="loginErrorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard View -->
+    <div id="dashboardView" class="dashboard-view hidden">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Mindbricks Dashboard</h1>
+                <button id="logoutButton" class="logout-btn">Logout</button>
+            </div>
+            <nav class="dashboard-nav">
+                <button id="listUsersTab" class="nav-tab active">List Users</button>
+                <button id="usersProjectsTab" class="nav-tab disabled">Users Projects</button>
+            </nav>
+        </header>
+
+        <!-- List Users Section -->
+        <div id="listUsersSection" class="section active">
+            <div class="section-header">
+                <h2>Users Overview</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalUsers">0</span>
+                        <span class="stat-label">Total Users</span>
+                    </div>
+                </div>
+                <button id="refreshUsers" class="refresh-btn">Refresh</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading users...</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p id="errorMessage"></p>
+                <button id="retryButton">Retry</button>
+            </div>
+
+            <div id="userList" class="user-list">
+                <!-- Users will be populated here -->
+            </div>
+        </div>
+
+        <!-- User Projects Detail Section -->
+        <div id="userProjectsSection" class="section hidden">
+            <div class="section-header">
+                <button id="backToUsers" class="back-btn">← Back to Users</button>
+                <h2 id="userProjectsTitle">User Projects</h2>
+            </div>
+
+            <div class="user-info-card">
+                <div id="selectedUserInfo"></div>
+            </div>
+
+            <div id="projectsList" class="projects-list">
+                <!-- User projects will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
