@@ -1,8 +1,8 @@
 class MindbricksDashboard {
     constructor() {
-        this.usersApiUrl = 'https://stage.mindbricks.com/api/user/users';
-        this.projectsApiUrl = 'https://stage.mindbricks.com/api/project/admin/userprojects';
-        this.batchApiUrl = 'https://stage.mindbricks.com/api/project/admin/userprojects/batch';
+        this.usersApiUrl = 'https://beta.mindbricks.com/api/user/users';
+        this.projectsApiUrl = 'https://beta.mindbricks.com/api/project/admin/userprojects';
+        this.batchApiUrl = 'https://beta.mindbricks.com/api/project/admin/userprojects/batch';
         this.bearerToken = '';
         this.users = [];
         this.userProjects = new Map(); 
